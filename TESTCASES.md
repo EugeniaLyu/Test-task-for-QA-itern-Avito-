@@ -2,7 +2,7 @@ import requests
 
 
 class AdApi:
-    #  Инициализация
+    # Инициализация
 
     def __init__(self, url):
         self.url = url
