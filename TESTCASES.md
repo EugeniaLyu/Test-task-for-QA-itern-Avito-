@@ -33,7 +33,7 @@ class AdApi:
         return resp.json()
 
 
-from SaleApi import SaleApi
+from AdApi import SaleApi
 
 api = SaleApi("https://qa-internship.avito.com")
 
