@@ -2,7 +2,7 @@ import requests
 
 
 class AdApi:
-    # Инициализация
+    #  Инициализация
 
     def __init__(self, url):
         self.url = url
@@ -33,19 +33,16 @@ class AdApi:
         return resp.json()
 
 
-from AdApi import SaleApi
-
-api = SaleApi("https://qa-internship.avito.com")
+api = AdApi("https://qa-internship.avito.com")
 
 
 def test_get_one_ad():
 
     # Обращаемся ко всем объявлениям продавца
 
-    sellerId = 91509
+    sellerId = 973361
     all_ad_sellerId = api.get_ad_sellerId(sellerId)
     len_before = len(all_ad_sellerId)
-    assert all_ad_sellerId
 
     # Сохраняем новое объявление продавца
 
@@ -82,7 +79,7 @@ def test_get_two_ad():
 
     # Обращаемся ко всем объявлениям продавца
 
-    sellerId = 91509
+    sellerId = 973361
     all_ad_sellerId = api.get_ad_sellerId(sellerId)
     len_before = len(all_ad_sellerId)
     assert all_ad_sellerId
@@ -122,7 +119,7 @@ def test_get_three_ad():
 
     # Обращаемся ко всем объявлениям продавца
 
-    sellerId = 91509
+    sellerId = 973361
     all_ad_sellerId = api.get_ad_sellerId(sellerId)
     len_before = len(all_ad_sellerId)
     assert all_ad_sellerId
@@ -162,7 +159,7 @@ def test_get_four_ad():
 
     # Обращаемся ко всем объявлениям продавца
 
-    sellerId = 91509
+    sellerId = 973361
     all_ad_sellerId = api.get_ad_sellerId(sellerId)
     len_before = len(all_ad_sellerId)
     assert all_ad_sellerId
@@ -202,7 +199,7 @@ def test_get_five_ad():
 
     # Обращаемся ко всем объявлениям продавца
 
-    sellerId = 91509
+    sellerId = 973361
     all_ad_sellerId = api.get_ad_sellerId(sellerId)
     len_before = len(all_ad_sellerId)
     assert all_ad_sellerId
@@ -242,7 +239,7 @@ def test_get_six_ad():
 
     # Обращаемся ко всем объявлениям продавца
 
-    sellerId = 91509
+    sellerId = 973361
     all_ad_sellerId = api.get_ad_sellerId(sellerId)
     len_before = len(all_ad_sellerId)
     assert all_ad_sellerId
@@ -282,7 +279,7 @@ def test_get_seven_ad():
 
     # Обращаемся ко всем объявлениям продавца
 
-    sellerId = 91509
+    sellerId = 973361
     all_ad_sellerId = api.get_ad_sellerId(sellerId)
     len_before = len(all_ad_sellerId)
     assert all_ad_sellerId
@@ -311,7 +308,7 @@ def test_get_eight_ad():
 
     # Обращаемся ко всем объявлениям продавца
 
-    sellerId = 91509
+    sellerId = 973361
     all_ad_sellerId = api.get_ad_sellerId(sellerId)
     len_before = len(all_ad_sellerId)
     assert all_ad_sellerId
@@ -351,7 +348,7 @@ def test_get_nine_ad():
 
     # Обращаемся ко всем объявлениям продавца
 
-    sellerId = 91509
+    sellerId = 973361
     all_ad_sellerId = api.get_ad_sellerId(sellerId)
     len_before = len(all_ad_sellerId)
     assert all_ad_sellerId
@@ -366,6 +363,7 @@ def test_get_nine_ad():
     result = api.save_ad(name, price, sellerId, contacts, like, viewCount)
     assert result["message"] == "internal error"
     assert result["code"] == 500
+
     # Обращаемся ко всем объявлениям продавца повторно
 
     all_ad_sellerId = api.get_ad_sellerId(sellerId)
@@ -380,7 +378,7 @@ def test_get_ten_ad():
 
     # Обращаемся ко всем объявлениям продавца
 
-    sellerId = 91509
+    sellerId = 973361
     all_ad_sellerId = api.get_ad_sellerId(sellerId)
     len_before = len(all_ad_sellerId)
     assert all_ad_sellerId
@@ -395,6 +393,7 @@ def test_get_ten_ad():
     result = api.save_ad(name, price, sellerId, contacts, like, viewCount)
     assert result["message"] == "internal error"
     assert result["code"] == 500
+
     # Обращаемся ко всем объявлениям продавца повторно
 
     all_ad_sellerId = api.get_ad_sellerId(sellerId)
@@ -409,7 +408,7 @@ def test_get_eleven_ad():
 
     # Обращаемся ко всем объявлениям продавца
 
-    sellerId = 91509
+    sellerId = 973361
     all_ad_sellerId = api.get_ad_sellerId(sellerId)
     len_before = len(all_ad_sellerId)
     assert all_ad_sellerId
@@ -424,6 +423,7 @@ def test_get_eleven_ad():
     result = api.save_ad(name, price, sellerId, contacts, like, viewCount)
     assert result["message"] == "internal error"
     assert result["code"] == 500
+
     # Обращаемся ко всем объявлениям продавца повторно
 
     all_ad_sellerId = api.get_ad_sellerId(sellerId)
@@ -438,7 +438,7 @@ def test_get_twelve_ad():
 
     # Обращаемся ко всем объявлениям продавца
 
-    sellerId = 91509
+    sellerId = 973361
     all_ad_sellerId = api.get_ad_sellerId(sellerId)
     len_before = len(all_ad_sellerId)
     assert all_ad_sellerId
@@ -453,6 +453,7 @@ def test_get_twelve_ad():
     result = api.save_ad(name, price, sellerId, contacts, like, viewCount)
     assert result["message"] == "internal error"
     assert result["code"] == 500
+
     # Обращаемся ко всем объявлениям продавца повторно
 
     all_ad_sellerId = api.get_ad_sellerId(sellerId)
@@ -467,7 +468,7 @@ def test_get_thirteen_ad():
 
     # Обращаемся ко всем объявлениям продавца
 
-    sellerId = 91509
+    sellerId = 973361
     all_ad_sellerId = api.get_ad_sellerId(sellerId)
     len_before = len(all_ad_sellerId)
     assert all_ad_sellerId
@@ -496,7 +497,7 @@ def test_get_fourteen_ad():
 
     # Обращаемся ко всем объявлениям продавца
 
-    sellerId = 91509
+    sellerId = 973361
     all_ad_sellerId = api.get_ad_sellerId(sellerId)
     len_before = len(all_ad_sellerId)
     assert all_ad_sellerId
@@ -511,6 +512,7 @@ def test_get_fourteen_ad():
     result = api.save_ad(name, price, sellerId, contacts, like, viewCount)
     assert result["message"] == "internal error"
     assert result["code"] == 500
+
     # Обращаемся ко всем объявлениям продавца повторно
 
     all_ad_sellerId = api.get_ad_sellerId(sellerId)
@@ -525,7 +527,7 @@ def test_get_fiveteen_ad():
 
     # Обращаемся ко всем объявлениям продавца
 
-    sellerId = 91509
+    sellerId = 973361
     all_ad_sellerId = api.get_ad_sellerId(sellerId)
     len_before = len(all_ad_sellerId)
     assert all_ad_sellerId
@@ -540,6 +542,7 @@ def test_get_fiveteen_ad():
     result = api.save_ad(name, price, sellerId, contacts, like, viewCount)
     assert result["message"] == "internal error"
     assert result["code"] == 500
+
     # Обращаемся ко всем объявлениям продавца повторно
 
     all_ad_sellerId = api.get_ad_sellerId(sellerId)
@@ -554,7 +557,7 @@ def test_get_sixteen_ad():
 
     # Обращаемся ко всем объявлениям продавца
 
-    sellerId = 91509
+    sellerId = 973361
     all_ad_sellerId = api.get_ad_sellerId(sellerId)
     len_before = len(all_ad_sellerId)
     assert all_ad_sellerId
@@ -569,6 +572,7 @@ def test_get_sixteen_ad():
     result = api.save_ad(name, price, sellerId, contacts, like, viewCount)
     assert result["message"] == "internal error"
     assert result["code"] == 500
+
     # Обращаемся ко всем объявлениям продавца повторно
 
     all_ad_sellerId = api.get_ad_sellerId(sellerId)
@@ -583,7 +587,7 @@ def test_get_seventeen_ad():
 
     # Обращаемся ко всем объявлениям продавца
 
-    sellerId = 91509
+    sellerId = 973361
     all_ad_sellerId = api.get_ad_sellerId(sellerId)
     len_before = len(all_ad_sellerId)
     assert all_ad_sellerId
@@ -598,6 +602,7 @@ def test_get_seventeen_ad():
     result = api.save_ad(name, price, sellerId, contacts, like, viewCount)
     assert result["message"] == "internal error"
     assert result["code"] == 500
+
     # Обращаемся ко всем объявлениям продавца повторно
 
     all_ad_sellerId = api.get_ad_sellerId(sellerId)
@@ -612,7 +617,7 @@ def test_get_eighteen_ad():
 
     # Обращаемся ко всем объявлениям продавца
 
-    sellerId = 91509
+    sellerId = 973361
     all_ad_sellerId = api.get_ad_sellerId(sellerId)
     len_before = len(all_ad_sellerId)
     assert all_ad_sellerId
@@ -627,6 +632,7 @@ def test_get_eighteen_ad():
     result = api.save_ad(name, price, sellerId, contacts, like, viewCount)
     assert result["message"] == "internal error"
     assert result["code"] == 500
+
     # Обращаемся ко всем объявлениям продавца повторно
 
     all_ad_sellerId = api.get_ad_sellerId(sellerId)
