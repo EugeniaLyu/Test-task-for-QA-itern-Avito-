@@ -1,7 +1,7 @@
 import requests
 
 
-class SaleApi:
+class AdApi:
     #  Инициализация
 
     def __init__(self, url):
