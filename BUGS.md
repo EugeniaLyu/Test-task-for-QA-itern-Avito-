@@ -9,7 +9,7 @@
         "sellerId": 3452,
         "statistics": {
             "contacts": -46,
-            "like": 4839.61,
+            "like": -4839,
             "viewCount": -74696
         }
     }    
