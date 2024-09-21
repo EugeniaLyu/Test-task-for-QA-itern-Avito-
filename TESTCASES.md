@@ -9,12 +9,12 @@ class AdApi:
 
     # Сохранить объявление:
 
-    def save_ad(self, name, price, sellerId, contacts, like, viewCount):
+    def save_ad(self, name, price, sellerId, contacts, likes, viewCount):
         sale = {
             "name": name,
             "price": price,
             "sellerId": sellerId,
-            "statistics": {"contacts": contacts, "like": like, "viewCount": viewCount},
+            "statistics": {"contacts": contacts, "likes": likes, "viewCount": viewCount},
         }
         my_headers = {}
         resp = requests.post(self.url + "/api/1/item", json=sale, headers=my_headers)
@@ -49,9 +49,9 @@ def test_get_one_ad():
     name = "Торшер"
     price = 42401
     contacts = 46
-    like = 4839
+    likes = 4839
     viewCount = 74696
-    result = api.save_ad(name, price, sellerId, contacts, like, viewCount)
+    result = api.save_ad(name, price, sellerId, contacts, likes, viewCount)
     status = result["status"]
     ad_id = status[23:]
 
@@ -71,7 +71,7 @@ def test_get_one_ad():
     assert ad_id[0]["price"] == price
     assert ad_id[0]["sellerId"] == sellerId
     assert ad_id[0]["statistics"]["contacts"] == contacts
-    # assert ad_id[0]["statistics"]["likes"] == like
+    assert ad_id[0]["statistics"]["likes"] == likes
     assert ad_id[0]["statistics"]["viewCount"] == viewCount
 
 
@@ -89,9 +89,9 @@ def test_get_two_ad():
     name = "lavalamp"
     price = 335392
     contacts = 312
-    like = 5
+    likes = 5
     viewCount = 0
-    result = api.save_ad(name, price, sellerId, contacts, like, viewCount)
+    result = api.save_ad(name, price, sellerId, contacts, likes, viewCount)
     status = result["status"]
     ad_id = status[23:]
 
@@ -111,7 +111,7 @@ def test_get_two_ad():
     assert ad_id[0]["price"] == price
     assert ad_id[0]["sellerId"] == sellerId
     assert ad_id[0]["statistics"]["contacts"] == contacts
-    # assert ad_id[0]["statistics"]["likes"] == like
+    assert ad_id[0]["statistics"]["likes"] == likes
     assert ad_id[0]["statistics"]["viewCount"] == viewCount
 
 
@@ -129,9 +129,9 @@ def test_get_three_ad():
     name = "наушники"
     price = 528359964
     contacts = 192109
-    like = 542820
+    likes = 542820
     viewCount = 6
-    result = api.save_ad(name, price, sellerId, contacts, like, viewCount)
+    result = api.save_ad(name, price, sellerId, contacts, likes, viewCount)
     status = result["status"]
     ad_id = status[23:]
 
@@ -151,7 +151,7 @@ def test_get_three_ad():
     assert ad_id[0]["price"] == price
     assert ad_id[0]["sellerId"] == sellerId
     assert ad_id[0]["statistics"]["contacts"] == contacts
-    # assert ad_id[0]["statistics"]["likes"] == like
+    assert ad_id[0]["statistics"]["likes"] == likes
     assert ad_id[0]["statistics"]["viewCount"] == viewCount
 
 
@@ -169,9 +169,9 @@ def test_get_four_ad():
     name = "КАМЕРА"
     price = 70991249656
     contacts = 0
-    like = 648295481
+    likes = 648295481
     viewCount = 268537
-    result = api.save_ad(name, price, sellerId, contacts, like, viewCount)
+    result = api.save_ad(name, price, sellerId, contacts, likes, viewCount)
     status = result["status"]
     ad_id = status[23:]
 
@@ -191,7 +191,7 @@ def test_get_four_ad():
     assert ad_id[0]["price"] == price
     assert ad_id[0]["sellerId"] == sellerId
     assert ad_id[0]["statistics"]["contacts"] == contacts
-    # assert ad_id[0]["statistics"]["likes"] == like
+    assert ad_id[0]["statistics"]["likes"] == likes
     assert ad_id[0]["statistics"]["viewCount"] == viewCount
 
 
@@ -209,9 +209,9 @@ def test_get_five_ad():
     name = "плащ-палатка"
     price = 84
     contacts = 8
-    like = 37
+    likes = 37
     viewCount = 75
-    result = api.save_ad(name, price, sellerId, contacts, like, viewCount)
+    result = api.save_ad(name, price, sellerId, contacts, likes, viewCount)
     status = result["status"]
     ad_id = status[23:]
 
@@ -231,7 +231,7 @@ def test_get_five_ad():
     assert ad_id[0]["price"] == price
     assert ad_id[0]["sellerId"] == sellerId
     assert ad_id[0]["statistics"]["contacts"] == contacts
-    # assert ad_id[0]["statistics"]["likes"] == like
+    assert ad_id[0]["statistics"]["likes"] == likes
     assert ad_id[0]["statistics"]["viewCount"] == viewCount
 
 
@@ -249,9 +249,9 @@ def test_get_six_ad():
     name = "Ни одного штриха не мог бы я сделать, а никогда не был таким большим художником, как в эти минуты."
     price = 3
     contacts = 2483
-    like = 0
+    likes = 0
     viewCount = 0
-    result = api.save_ad(name, price, sellerId, contacts, like, viewCount)
+    result = api.save_ad(name, price, sellerId, contacts, likes, viewCount)
     status = result["status"]
     ad_id = status[23:]
 
@@ -271,7 +271,7 @@ def test_get_six_ad():
     assert ad_id[0]["price"] == price
     assert ad_id[0]["sellerId"] == sellerId
     assert ad_id[0]["statistics"]["contacts"] == contacts
-    assert ad_id[0]["statistics"]["likes"] == like
+    assert ad_id[0]["statistics"]["likes"] == likes
     assert ad_id[0]["statistics"]["viewCount"] == viewCount
 
 
@@ -289,9 +289,9 @@ def test_get_seven_ad():
     name = "lava лампа"
     price = 7902.61
     contacts = 0
-    like = 0
+    likes = 0
     viewCount = 0
-    result = api.save_ad(name, price, sellerId, contacts, like, viewCount)
+    result = api.save_ad(name, price, sellerId, contacts, likes, viewCount)
     assert result["message"] == "internal error"
     assert result["code"] == 500
     # Обращаемся ко всем объявлениям продавца повторно
@@ -318,9 +318,9 @@ def test_get_eight_ad():
     name = "Торшер"
     price = 0
     contacts = 46
-    like = 4839
+    likes = 4839
     viewCount = 74696
-    result = api.save_ad(name, price, sellerId, contacts, like, viewCount)
+    result = api.save_ad(name, price, sellerId, contacts, likes, viewCount)
     status = result["status"]
     ad_id = status[23:]
 
@@ -340,7 +340,7 @@ def test_get_eight_ad():
     assert ad_id[0]["price"] == price
     assert ad_id[0]["sellerId"] == sellerId
     assert ad_id[0]["statistics"]["contacts"] == contacts
-    # assert ad_id[0]["statistics"]["likes"] == like
+    assert ad_id[0]["statistics"]["likes"] == likes
     assert ad_id[0]["statistics"]["viewCount"] == viewCount
 
 
@@ -358,9 +358,9 @@ def test_get_nine_ad():
     name = "КАМЕРА"
     price = 70991249656
     contacts = 0
-    like = 648295481
+    likes = 648295481
     viewCount = 268537.51
-    result = api.save_ad(name, price, sellerId, contacts, like, viewCount)
+    result = api.save_ad(name, price, sellerId, contacts, likes, viewCount)
     assert result["message"] == "internal error"
     assert result["code"] == 500
 
@@ -388,9 +388,9 @@ def test_get_ten_ad():
     name = "✧✧✧✧✧✧"
     price = 5508
     contacts = 121498439
-    like = 819
+    likes = 819
     viewCount = 0
-    result = api.save_ad(name, price, sellerId, contacts, like, viewCount)
+    result = api.save_ad(name, price, sellerId, contacts, likes, viewCount)
     assert result["message"] == "internal error"
     assert result["code"] == 500
 
@@ -418,9 +418,9 @@ def test_get_eleven_ad():
     name = ""
     price = 335392
     contacts = 312
-    like = 5
+    likes = 5
     viewCount = 0
-    result = api.save_ad(name, price, sellerId, contacts, like, viewCount)
+    result = api.save_ad(name, price, sellerId, contacts, likes, viewCount)
     assert result["message"] == "internal error"
     assert result["code"] == 500
 
@@ -448,9 +448,9 @@ def test_get_twelve_ad():
     name = "наушники"
     price = -528359964
     contacts = 192109
-    like = 542820
+    likes = 542820
     viewCount = 6
-    result = api.save_ad(name, price, sellerId, contacts, like, viewCount)
+    result = api.save_ad(name, price, sellerId, contacts, likes, viewCount)
     assert result["message"] == "internal error"
     assert result["code"] == 500
 
@@ -478,9 +478,9 @@ def test_get_thirteen_ad():
     name = "КАМЕРА"
     price = 84
     contacts = -8
-    like = 37
+    likes = 37
     viewCount = 75
-    result = api.save_ad(name, price, sellerId, contacts, like, viewCount)
+    result = api.save_ad(name, price, sellerId, contacts, likes, viewCount)
     assert result["message"] == "internal error"
     assert result["code"] == 500
     # Обращаемся ко всем объявлениям продавца повторно
@@ -507,9 +507,9 @@ def test_get_fourteen_ad():
     name = "плащ-палатка"
     price = 70991249656
     contacts = 0
-    like = -648295481
+    likes = -648295481
     viewCount = 268537
-    result = api.save_ad(name, price, sellerId, contacts, like, viewCount)
+    result = api.save_ad(name, price, sellerId, contacts, likes, viewCount)
     assert result["message"] == "internal error"
     assert result["code"] == 500
 
@@ -537,9 +537,9 @@ def test_get_fiveteen_ad():
     name = "Торшер"
     price = 3
     contacts = 2483
-    like = 0
+    likes = 0
     viewCount = -74696
-    result = api.save_ad(name, price, sellerId, contacts, like, viewCount)
+    result = api.save_ad(name, price, sellerId, contacts, likes, viewCount)
     assert result["message"] == "internal error"
     assert result["code"] == 500
 
@@ -567,9 +567,9 @@ def test_get_sixteen_ad():
     name = "lava лампа"
     price = 335392
     contacts = 312
-    like = 5.21
+    likes = 5.21
     viewCount = 0
-    result = api.save_ad(name, price, sellerId, contacts, like, viewCount)
+    result = api.save_ad(name, price, sellerId, contacts, likes, viewCount)
     assert result["message"] == "internal error"
     assert result["code"] == 500
 
@@ -597,9 +597,9 @@ def test_get_seventeen_ad():
     name = "lavaлампа"
     price = 335392
     contacts = 312
-    like = "5"
+    likes = "5"
     viewCount = 0
-    result = api.save_ad(name, price, sellerId, contacts, like, viewCount)
+    result = api.save_ad(name, price, sellerId, contacts, likes, viewCount)
     assert result["message"] == "internal error"
     assert result["code"] == 500
 
@@ -627,9 +627,9 @@ def test_get_eighteen_ad():
     name = "Противоположная точка зрения подразумевает, что стремящиеся вытеснить традиционное производство, нанотехнологии, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут призваны к ответу. В целом, конечно, перспективное планирование требует от нас анализа дальнейших направлений развития. Наше дело не так однозначно, как может показаться: повышение уровня гражданского сознания выявляет срочную потребность первоочередных требований."
     price = 21060
     contacts = 0
-    like = 4839
+    likes = 4839
     viewCount = 43968
-    result = api.save_ad(name, price, sellerId, contacts, like, viewCount)
+    result = api.save_ad(name, price, sellerId, contacts, likes, viewCount)
     assert result["message"] == "internal error"
     assert result["code"] == 500
 
